@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
-#define M 15
+#include <time.h>
+#define M 500
 
 void vali_num(const char *cadena)
 {
@@ -82,5 +83,49 @@ void buscar_Numero_Vector(int vector[], int n) {
         }
     }
 }
+
+
+int validarStatus(int valor)
+{
+    return (valor == 0 || valor == 1);
+}
+
+char validarSexo(char valor)
+{
+    return (valor == 'M' || valor == 'F');
+}
+
+int validarMatricula(int valor)
+{
+    return (valor >= 300000 && valor <= 399999);
+}
+
+
+int esNumero(char *cadena)
+{
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        if (!isdigit(cadena[i]))
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int soloLetras(char *cadena)
+{
+    for (int i = 0; cadena[i] != '\0'; i++)
+    {
+        if (!isalpha(cadena[i]))
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+
 
 
